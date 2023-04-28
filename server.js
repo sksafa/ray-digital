@@ -20,6 +20,11 @@ app.use(express.json())
 app.use(cors())
 app.use(morgan("dev"))
 
+app.use("/api/v1/users", require("./routes/userRoute"));
+
+
+
+//static files
 
 
 //listen port 
