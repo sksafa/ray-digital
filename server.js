@@ -5,13 +5,16 @@ const morgan = require('morgan');;
 const dotenv = require('dotenv')
 const colors = require('colors');
 const path = require("path");
+import { fileURLToPath } from "url";
 const  connectDb  = require('./config/connectDb');
 dotenv.config()
+
 
 //database call
 
 connectDb()
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //rest obj
 const app = express()
 
@@ -28,7 +31,7 @@ app.use(express.static(path.join(__dirname, "./frontend/build")));
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
   });
-  
+
 //listen port 
 const PORT = 8080 ||  process.env.PORT
 app.listen(PORT, ()=>{
