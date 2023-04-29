@@ -11,7 +11,7 @@ const UserSectorInfo = ({userInfoData, user, getUserInfos}) => {
 
     const handleDelete = async (id) => {
         try {
-            const { data } = await axios.delete(`/userInfo/deleteUserInfos/${id}`);
+            const { data } = await axios.delete(`/api/v1/userInfo/deleteUserInfos/${id}`);
             toast.success("Data Deleted Successfully");
             getUserInfos()
         } catch (error) {

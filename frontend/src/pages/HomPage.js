@@ -19,7 +19,7 @@ const HomPage = () => {
   }, [])
 
   const getUserInfos = async () => {
-    const { data } = await axios.get(`/userInfo/userInfos`)
+    const { data } = await axios.get(`/api/v1/userInfo/userInfos`)
     setUserInfoData(data)
 }
 

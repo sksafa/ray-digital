@@ -20,7 +20,7 @@ const Register = () => {
             } else if (password === '') {
                 toast.error("password not be empty")
             } else {
-                const { data } = await axios.post("/users/register", {
+                const { data } = await axios.post("/api/v1/users/register", {
                     name, email, password,
                 })
                 toast.success('Registered Successfully')

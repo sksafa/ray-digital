@@ -25,7 +25,7 @@ const AddUserInfo = ({id, getUserInfos}) => {
 
 
     const getSingleUserInfos = async () => {
-        const { data } = await axios.get(`/userInfo/userInfos/${id}`)
+        const { data } = await axios.get(`/api/v1/userInfo/userInfos/${id}`)
         setName(data.name)
         setAge(data.age)
         setDegree(data.degree)
@@ -42,7 +42,7 @@ const AddUserInfo = ({id, getUserInfos}) => {
                 toast.error("Enter Degree")
             } else {
                 if(id){
-                    const { data } = await axios.put(`/userInfo/updateUserInfos/${id}`, {
+                    const { data } = await axios.put(`/api/v1/userInfo/updateUserInfos/${id}`, {
                         name, age, degree, user
                     })
                     toast.success('Updated Successfully')
@@ -53,7 +53,7 @@ const AddUserInfo = ({id, getUserInfos}) => {
                     getUserInfos()
                     setTimeout(() => navigate("/"), 1000);
                 }else{
-                    const { data } = await axios.post(`/userInfo/userInfos`, {
+                    const { data } = await axios.post(`/api/v1/userInfo/userInfos`, {
                         name, age, degree, user
                     })
                     toast.success('Added Successfully')
