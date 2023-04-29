@@ -24,8 +24,11 @@ app.use("/api/v1/users", require("./routes/userRoute"));
 app.use("/api/v1/userInfo", require("./routes/userInfoRoute"));
 
 //static files
-
-
+app.use(express.static(path.join(__dirname, "./frontend/build")));
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
+  });
+  
 //listen port 
 const PORT = 8080 ||  process.env.PORT
 app.listen(PORT, ()=>{
