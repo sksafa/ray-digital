@@ -22,12 +22,13 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(morgan("dev"))
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 
 app.use("/api/v1/users", require("./routes/userRoute"));
 app.use("/api/v1/userInfo", require("./routes/userInfoRoute"));
 
 //static files
-app.use(express.static(path.join(__dirname, "./frontend/build")));
+
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
   });
