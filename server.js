@@ -5,7 +5,7 @@ const morgan = require('morgan');;
 const dotenv = require('dotenv')
 const colors = require('colors');
 const path = require("path");
-import { fileURLToPath } from "url";
+const {fileURLToPath} = require('url')
 const  connectDb  = require('./config/connectDb');
 dotenv.config()
 
