@@ -21,8 +21,7 @@ app.use(cors())
 app.use(morgan("dev"))
 
 app.use("/api/v1/users", require("./routes/userRoute"));
-
-
+app.use("/api/v1/userInfo", require("./routes/userInfoRoute"));
 
 //static files
 
