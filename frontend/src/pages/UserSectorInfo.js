@@ -18,9 +18,6 @@ const UserSectorInfo = ({userInfoData, user, getUserInfos}) => {
             toast.error(error);
         }
     }
-
-    console.log("user", userInfoData);
-    
     return (
         <div className='mt-5 bg-light rounded p-4 shadow' style={{overFlow:"scroll"}}>
             <h6 className='text-center mb-2'>List of User Infos </h6>

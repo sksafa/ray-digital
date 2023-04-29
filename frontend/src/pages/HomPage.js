@@ -14,7 +14,6 @@ const HomPage = () => {
   useEffect(() => {
     getUserInfos()
       const data = localStorage.getItem('auth')
-      console.log("data", data);
       const LoginUser = (JSON.parse(data))
       setUser(LoginUser?.user?._id)
   }, [])

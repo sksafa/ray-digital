@@ -23,7 +23,6 @@ const Login = () => {
                 const { data } = await axios.post("/users/login", {
                     email, password,
                 })
-                console.log("object",  data.token);
                 toast.success('Login Successfully')
                 setAuth({
                     ...auth,
